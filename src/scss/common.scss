@@ -1,1 +1,22 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+.menu-sub-title {
+	text-transform: uppercase;
+	line-height: 150%; /* 21/14 */
+	color: $green;
+	transition: all 0.3s ease 0s;
+	letter-spacing: 0.1em;
+	&__link {
+		&:hover {
+			color: #53ffd5;
+			text-decoration: underline;
+		}
+	}
+}
+.menu-text {
+	font-weight: 300;
+	font-size: 10px;
+	text-transform: uppercase;
+	line-height: 150%;
+	letter-spacing: 0.1em;
+}
