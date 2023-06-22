@@ -149,9 +149,6 @@ width: 100%;
 		&:hover path {
 			fill: $green;
 		}
-		@media (max-width: 767px) {
-			display: none;
-		}
 	}
 
 	&__body {
@@ -459,6 +456,10 @@ width: 100%;
 	&__number {
 		display: block;
 		padding-bottom: 7px;
+		@media (max-width: 767px) {
+			padding-bottom: 20px;
+			padding-top: 10px;
+		}
 	}
 
 	&__order-call {
