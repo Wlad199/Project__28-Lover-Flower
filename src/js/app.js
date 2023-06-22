@@ -21,11 +21,11 @@ import * as flsFunctions from "./files/functions.js";
 //===================//
 
 /* MW Модуль для работы с меню (Бургер) */
-// flsFunctions.MenuBurg();
+flsFunctions.MenuBurg();
 //===================//
 
 // Функционал добавления классов к хедеру при прокрутке
-// flsScroll.headerScroll();
+flsScroll.headerScroll();
 //===================//
 
 /* MW (3.106) Добавление класса touch для HTML если браузер мобильный */
@@ -55,7 +55,7 @@ import * as flsFunctions from "./files/functions.js";
 //===================//
 
 /* Динамический адаптив */
-// import "./libs/dynamic_adapt.js";
+import "./libs/dynamic_adapt.js";
 //===================//
 
 
