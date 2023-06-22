@@ -92,9 +92,12 @@ body._lock {
 //  ====================================================================================================//
 
 .header {
-background-color: #969696;
-position: fixed;
-width: 100%;
+	//display: none;
+	background-color: transparent;
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+
 
 	&__container {
 		display: flex;
@@ -416,9 +419,10 @@ width: 100%;
 	border-radius: 10px;
 	padding: 20px 18px;
 	margin-bottom: 180px;
+	@include adaptiveValue("margin-bottom", 180, 50, 1108, 767);
 	@media (max-width: 767px) {
 		padding: 0;
-		margin: 0;
+		//margin: 0;
 	}
 
 	&__list {
@@ -460,6 +464,9 @@ width: 100%;
 			padding-bottom: 20px;
 			padding-top: 10px;
 		}
+		@media (min-width: 767px) {
+			padding-right: 20px;
+		}
 	}
 
 	&__order-call {
@@ -493,6 +500,8 @@ width: 100%;
 }
 .header._header-scroll{
 	height: 50px;
+	background-color: #000;
+	z-index: 4;
 }
 .header._header-scroll .header__menu{
 	height: 50px;

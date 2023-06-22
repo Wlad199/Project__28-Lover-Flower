@@ -32,4 +32,33 @@
 		line-height: 150%; /* 18/12 */
 		font-size: 12px;
 	}
+	&_t {
+		line-height: 150%; /* 30/20 */
+		@include adaptiveValue("font-size", 20, 16);
+		letter-spacing: 0.02em;
+	}
+}
+
+// button ====================================================================================================//
+
+.button {
+	display: block;
+	padding: 16px 50px;
+	background-color: $green;
+	transition: all 0.3s ease 0s;
+	color: #000;
+	font-weight: 700;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	&:hover{
+		background-color: $purple;
+		color: #fff;
+	}
+	&:focus{
+		outline: 1px solid #7D2253;
+	}
+	&:active{
+		box-shadow: inset 0px 0px 10px #1B000E;
+	}
 }
