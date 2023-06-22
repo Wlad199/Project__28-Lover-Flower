@@ -7,9 +7,18 @@
 	padding-top: 130px;
 	position: relative;
 	//padding-bottom: 730px;
-	@include adaptiveValue("padding-bottom", 730, 100);
+	@include adaptiveValue("padding-bottom", 730, 100, 1108, 767, 2);
+	@media (max-width: 767px) {
+		padding-top: 90px;
+	}
 
 	&__container {
+		@media (max-width: 767px) {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			height: calc(100vh - 160px);
+		}
 	}
 
 	&__title {
@@ -20,6 +29,9 @@
 		text-align: center;
 		letter-spacing: 0.2em;
 		@include adaptiveValue("padding-bottom", 20, 10);
+		@media (max-width: 767px) {
+			flex: 1 1 auto;
+		}
 	}
 
 	&__text {
@@ -41,8 +53,17 @@
 		height: 100%;
 		z-index: -1;
 	}
+
+	&__sign {
+		position: absolute;
+		bottom: 5%;
+		right: 5%;
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
 }
 
 body._lock .main-screen__button {
-	//z-index: 1;
+	z-index: 1;
 }
