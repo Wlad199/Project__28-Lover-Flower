@@ -1,6 +1,7 @@
 .page{	//!!!
 	//background-color: #000;
 	padding-bottom: 150px;
+	margin-bottom: 1px;
 }
 
 // main-screen ====================================================================================================//
@@ -266,19 +267,132 @@ body._lock .main-screen__button {
 	}
 
 	&__link {
-		font-weight: 700;
-		font-size: 12px;
-		line-height: 150%; /* 18/12 */
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		color: $pink;
-		text-align: right;
-		display: block;
-		&:hover{
-			text-decoration: underline;
-		}
+		max-width: 120px;
+		margin: 0px 0px 0px auto;
 		@media (max-width: 630px) {
 			text-align: center;
 		}
+	}
+}
+
+// popular ====================================================================================================//
+
+.popular {
+	background-color: #000;
+	margin-top: -1px;
+	@include adaptiveValue("padding-bottom", 80, 60);
+
+	&__container {
+	}
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 30, 15);
+		p:last-child{
+			text-align: center;
+		}
+	}
+
+	&__text {
+		font-weight: 300;
+		@include adaptiveValue("font-size", 20, 16);
+		letter-spacing: 0.4px;
+		@include adaptiveValue("padding-bottom", 86, 60);
+	}
+
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		margin: 0px -15px;
+		@include adaptiveValue("padding-bottom", 60, 40);
+	}
+
+	&__item {
+		padding: 0px 15px;
+	}
+
+	&__link {
+		display: inline-block;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			width: 35%;
+			height: 100%;
+			background: url('@img/popular/arrow-right-pink.svg') 10px 50% no-repeat;
+		}
+	}
+}
+
+
+.item-popular {
+
+	&_1 {
+		position: relative;
+	}
+
+	&_2 {
+	}
+
+	&_3 {
+		position: relative;
+	}
+
+	&__decor_new{
+		font-size: 20px;
+		font-weight: 300;
+		letter-spacing: 0.4px;
+		color: #040A0A;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: -7px;
+		right: 2px;
+		width: 60px;
+		height: 60px;
+		background-color: $pink;
+		border-radius: 50%;
+	}
+
+	&__decor_sale{
+		font-size: 20px;
+		font-weight: 300;
+		letter-spacing: 0.4px;
+		color: #040A0A;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: -7px;
+		right: 2px;
+		width: 60px;
+		height: 60px;
+		background-color: $green;
+		border-radius: 50%;
+	}
+
+	&__image {
+		padding-bottom: 10px;
+	}
+
+	&__title {
+		padding-bottom: 10px;
+	}
+
+	&__price {
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		padding-bottom: 20px;
+		p{
+			display: inline;
+			padding-left: 10px;
+			font-weight: 300;
+			color: #939393;
+			text-decoration:line-through;
+		}
+	}
+
+	&__button {
 	}
 }
