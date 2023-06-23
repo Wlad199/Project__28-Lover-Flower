@@ -278,11 +278,46 @@ body._lock .main-screen__button {
 // popular ====================================================================================================//
 
 .popular {
+	position: relative;
 	background-color: #000;
 	margin-top: -1px;
 	@include adaptiveValue("padding-bottom", 80, 60);
 
 	&__container {
+		position: relative;
+		z-index: 1;
+		&::after{
+			position: absolute;
+			content: '';
+			top: 570px;
+			left: 250px;
+			width: 570px;
+			height: 396px;
+			background: #7D2253;
+			filter: blur(125px);
+			transform: rotate(32.83deg);
+			z-index: 1;
+			@media (max-width: 550px) {
+				top: 60%;
+				left: 0px;
+			}
+		}
+		&::before{
+			position: absolute;
+			content: '';
+			top: 400px;
+			left: 0px;
+			width: 413px;
+			height: 460px;
+			background: $green;
+			filter: blur(125px);
+			transform: rotate(32.83deg);
+			z-index: 1;
+			@media (max-width: 550px) {
+				top: 300px;
+				left: 85px;
+			}
+		}
 	}
 
 	&__title {
@@ -296,23 +331,36 @@ body._lock .main-screen__button {
 		font-weight: 300;
 		@include adaptiveValue("font-size", 20, 16);
 		letter-spacing: 0.4px;
-		@include adaptiveValue("padding-bottom", 86, 60);
+		@include adaptiveValue("padding-bottom", 86, 40);
 	}
 
 	&__content {
-		display: flex;
-		justify-content: space-between;
+		z-index: 2;
+		position: relative;
 		margin: 0px -15px;
 		@include adaptiveValue("padding-bottom", 60, 40);
+		@media (max-width: 992px) {
+			margin: 0px -10px;
+		}
+		@media (max-width: 550px) {
+			margin: 0;
+		}
 	}
 
 	&__item {
 		padding: 0px 15px;
+		@media (max-width: 992px) {
+			padding: 0px 10px;
+		}
+		@media (max-width: 550px) {
+			padding: 0;
+		}
 	}
 
 	&__link {
 		display: inline-block;
 		position: relative;
+		z-index: 1;
 		&::after{
 			content: '';
 			position: absolute;
@@ -321,10 +369,35 @@ body._lock .main-screen__button {
 			background: url('@img/popular/arrow-right-pink.svg') 10px 50% no-repeat;
 		}
 	}
+
+	&__bg-ibg{
+		position: absolute;
+		top: 26px;
+		right: 0;
+		width: 70%;
+		height: 65%;
+		@media (max-width: 550px) {
+			display: none;
+		}
+	}
 }
 
 
 .item-popular {
+	padding-bottom: 10px;
+	@media (max-width: 550px) {
+		&:not(:last-child){
+			@include adaptiveValue("margin-bottom", 50, 40);
+		}
+		max-width: 350px;
+		margin: 0 auto;
+	}
+	img {
+		filter: grayscale(100%);
+		@media (max-width: 550px) {
+			filter: grayscale(0);
+		}
+	}
 
 	&_1 {
 		position: relative;
@@ -337,6 +410,13 @@ body._lock .main-screen__button {
 		position: relative;
 	}
 
+	&_4 {
+		@media (max-width: 550px) {
+			display: none;
+		}
+
+	}
+
 	&__decor_new{
 		font-size: 20px;
 		font-weight: 300;
@@ -346,8 +426,8 @@ body._lock .main-screen__button {
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		top: -7px;
-		right: 2px;
+		top: 0px;
+		right: 15px;
 		width: 60px;
 		height: 60px;
 		background-color: $pink;
@@ -363,8 +443,8 @@ body._lock .main-screen__button {
 		justify-content: center;
 		align-items: center;
 		position: absolute;
-		top: -7px;
-		right: 2px;
+		top: 1px;
+		right: 15px;
 		width: 60px;
 		height: 60px;
 		background-color: $green;
@@ -373,6 +453,9 @@ body._lock .main-screen__button {
 
 	&__image {
 		padding-bottom: 10px;
+		img {
+			max-width: 100%;
+		}
 	}
 
 	&__title {
@@ -394,5 +477,58 @@ body._lock .main-screen__button {
 	}
 
 	&__button {
+		@media (max-width: 767px) {
+			padding: 0;
+			height: 50px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		@media (max-width: 550px) {
+			max-width: 350px;
+		}
 	}
+}
+
+.slick-center.item-popular{
+	img {
+		filter: none;
+	}
+}
+
+//  ====================================================================================================//
+
+///* Ограничивающая оболочка */
+.slick-list {
+	overflow: hidden;	//!!! Скрыть лишние слайды
+		padding: 0 !important;
+}
+///* Лента слайдов */
+.slick-track{
+	display: flex;	//!!! Выстроить в ряд
+}
+///* Стрелки*/
+.slick-arrow{
+	position: absolute;
+	top: 225px;
+	z-index: 2;
+	font-size: 0;
+	height: 15px;
+	width: 80px;
+	@media (max-width: 1300px) {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+}
+///* Стрелка влево */
+.slick-arrow.slick-prev{
+	left: -75px;
+	background: url('@img//popular/arrow-left.svg') no-repeat;
+}
+///* Стрелка вправо */
+.slick-arrow.slick-next{
+	right: -75px;
+	background: url('@img//popular/arrow-right.svg') no-repeat;
 }
