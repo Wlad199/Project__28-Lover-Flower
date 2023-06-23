@@ -1,5 +1,5 @@
 .page{	//!!!
-	background-color: #000;
+	//background-color: #000;
 	padding-bottom: 150px;
 }
 
@@ -73,6 +73,8 @@ body._lock .main-screen__button {
 //  ====================================================================================================//
 
 .catalog {
+	background-color: #000;
+	margin-top: -1px;
 	position: relative;
 	@include adaptiveValue("padding-top", 100, 50);
 	@include adaptiveValue("padding-bottom", 170, 50);
@@ -89,6 +91,11 @@ body._lock .main-screen__button {
 			background: #7D2253;
 			filter: blur(125px);
 			transform: rotate(32.83deg);
+			z-index: 1;
+			@media (max-width: 630px) {
+				top: 630px;
+				left: -200px;
+			}
 		}
 		&::before{
 			position: absolute;
@@ -100,6 +107,11 @@ body._lock .main-screen__button {
 			background: #43FFD2;
 			filter: blur(125px);
 			transform: rotate(32.83deg);
+			z-index: 1;
+			@media (max-width: 630px) {
+				top: 188px;
+				left: -132px;
+			}
 		}
 	}
 
@@ -110,41 +122,57 @@ body._lock .main-screen__button {
 	&__body {
 		display: flex;
 		margin: 0px -15px;
+		@media (max-width: 630px) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__column {
 		flex: 0 1 50%;
 		padding: 0px 15px;
+		@media (max-width: 630px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("margin-bottom", 40, 30);
+		}
 	}
 
 	&__words-decor-ibg{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		font-weight: 700;
-		@include adaptiveValue("font-size", 200, 80);
-		line-height: 100%;
-		letter-spacing: 0.04em;
-		text-transform: uppercase;
-		color: #0A1717;
-		p:nth-child(1){
-			text-align: right;
-			transform: translateX(15%);
-		}
-		p:nth-child(2){
-			transform: translateX(-15%);
-		}
-		p:nth-child(3){
-			text-align: center;
-			transform: translateX(30%);
-
+		display: none;
+		user-select: none;
+		@media (min-width: 767px) {
+			display: block;
+			position: absolute;
+			top: 70px;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			font-weight: 700;
+			@include adaptiveValue("font-size", 200, 80);
+			line-height: 100%;
+			letter-spacing: 0.04em;
+			text-transform: uppercase;
+			color: #0A1717;
+			p:not(:last-child){
+				padding-bottom: 40px;
+			}
+			p:nth-child(1){
+				text-align: right;
+				transform: translateX(15%);
+			}
+			p:nth-child(2){
+				transform: translateX(-15%);
+			}
+			p:nth-child(3){
+				text-align: center;
+				transform: translateX(30%);
+			}
 		}
 	}
 }
 
 .column-catalog {
+	position: relative;
+	z-index: 2;
 
 	&_1 {
 	}
@@ -153,14 +181,25 @@ body._lock .main-screen__button {
 	}
 
 	&__text-block {
-		font-weight: 300;
-		@include adaptiveValue("font-size", 20, 16);
-		line-height: 130%; /* 26/20 */
-		letter-spacing: 0.04em;
-		p:not(:last-child){
-			@include adaptiveValue("padding-bottom", 30, 20);
+		display: none;
+		@media (min-width: 630px) {
+			display: block;
+			font-weight: 300;
+			@include adaptiveValue("font-size", 20, 16);
+			line-height: 130%; /* 26/20 */
+			letter-spacing: 0.04em;
+			p:not(:last-child){
+				@include adaptiveValue("padding-bottom", 30, 20);
+			}
+			@include adaptiveValue("padding-bottom", 80, 40);
+			transform: translateX(90px);
+			@media (max-width: 1150px) {
+				transform: translateX(50px);
+			}
+			@media (max-width: 1050px) {
+				transform: translateX(0);
+			}
 		}
-		@include adaptiveValue("padding-bottom", 80, 40);
 	}
 
 	&__element {
@@ -173,14 +212,20 @@ body._lock .main-screen__button {
 }
 
 .elemen-catalog {
+	@media (max-width: 630px) {
+		text-align: center;
+	}
 
 
 	&_1 {
 	}
 	
 	&_2 {
-		max-width: 445px;
-		margin: 0px 0px 30px auto;
+		@media (min-width: 630px) {
+			max-width: 445px;
+			margin: 0px 0px 30px auto;
+		}
+		@include adaptiveValue("margin-bottom", 40, 30);
 	}
 
 	&_3 {
@@ -198,18 +243,20 @@ body._lock .main-screen__button {
 		li:not(:last-child){
 			padding-bottom: 4px;
 		}
-		li{
-			position: relative;
-			padding-left: 15px;
-			&::after{
-				position: absolute;
-				content: '';
-				top: 11px;
-				left: 0;
-				width: 4px;
-				height: 4px;
-				background-color: #fff;
-				border-radius: 50%;
+		@media (min-width: 630px) {
+			li{
+				position: relative;
+				padding-left: 15px;
+				&::after{
+					position: absolute;
+					content: '';
+					top: 11px;
+					left: 0;
+					width: 4px;
+					height: 4px;
+					background-color: #fff;
+					border-radius: 50%;
+				}
 			}
 		}
 		padding-bottom: 24px;
@@ -229,6 +276,9 @@ body._lock .main-screen__button {
 		display: block;
 		&:hover{
 			text-decoration: underline;
+		}
+		@media (max-width: 630px) {
+			text-align: center;
 		}
 	}
 }
