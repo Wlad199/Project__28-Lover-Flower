@@ -497,7 +497,7 @@ body._lock .main-screen__button {
 	}
 }
 
-//  ====================================================================================================//
+// Slider ====================================================================================================//
 
 ///* Ограничивающая оболочка */
 .slick-list {
@@ -531,4 +531,166 @@ body._lock .main-screen__button {
 .slick-arrow.slick-next{
 	right: -75px;
 	background: url('@img//popular/arrow-right.svg') no-repeat;
+}
+
+// how-order ====================================================================================================//
+
+.how-order {
+	background-color: #000;
+	margin-top: -1px;
+	@include adaptiveValue("padding-top", 100, 30);
+	@include adaptiveValue("padding-bottom", 160, 50);
+	position: relative;
+
+	&__container {
+		@media (max-width: 767px) {
+			position: relative;
+			&::after{
+				content: '';
+				position: absolute;
+				bottom: 50px;
+				right: -100px;
+				width: 250px;
+				height: 180px;
+				background: $green;
+				filter: blur(125px);
+				transform: rotate(32.83deg);
+			}
+		}
+	}
+
+	&__decor {
+		position: absolute;
+		top: 100px;
+		left: 0;
+		@media (max-width: 992px) {
+			left: -100px;
+		}
+		@media (max-width: 767px) {
+			top: -120px;
+			left: -130px;
+		}
+		@media (max-width: 450px) {
+			left: -170px;
+		}
+	}
+
+	&__title {
+		padding-bottom: 30px;
+		position: relative;
+		z-index: 1;
+		@media (max-width: 767px) {
+			text-align: center;
+		}
+	}
+
+	&__body {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		justify-content: space-between;
+		padding-right: 100px;
+		@include adaptiveValue("padding-right", 100, 30, 1108, 992, 1);
+		gap: 30px;
+		flex-wrap: wrap;
+		padding-top: 40px;
+		margin-left: 370px;
+		position: relative;
+		&::after{
+			@media (min-width: 767px) {
+				content: '';
+				position: absolute;
+				top: 10%;
+				right: 10px;
+				width: 1px;
+				height: 90%;
+				background-color: $pink;
+			}
+		}
+		@media (max-width: 992px) {
+			margin-left: 270px;
+		}
+		@media (max-width: 767px) {
+			margin-left: 0;
+			padding: 40px 0px 0px 0px;
+		}
+	}
+
+	&__step {
+		flex: 0 1 calc(50% - 15px);
+		max-width: 250px;
+		//@include adaptiveValue("margin-bottom", 40, 30);
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			max-width: none;
+		}
+	}
+
+	&__sign {
+		display: none;
+	}
+}
+
+.step-how-order {
+
+	&_1 {
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			top: -40px;
+			left: 0;
+			width: 65px;
+			height: 10px;
+			background-color: $pink;
+		}
+		@media (max-width: 767px) {
+			order: 1;
+			margin-left: 240px;
+		}
+		@media (max-width: 440px) {
+			margin-left: 190px;
+		}
+	}
+	&_2 {
+		@media (max-width: 767px) {
+			order: 2;
+			margin-left: 150px;
+		}
+		@media (max-width: 440px) {
+			margin-left: 100px;
+		}
+	}
+	&_3 {
+		@media (max-width: 767px) {
+			order: 3;
+			margin-left: 100px;
+		}
+		@media (max-width: 440px) {
+			margin-left: 40px;
+		}
+	}
+	&_4 {
+		@media (max-width: 767px) {
+			order: 4;
+			margin-left: 50px;
+		}
+		@media (max-width: 440px) {
+			margin-left: 0px;
+		}
+	}
+	&_5 {
+		@media (max-width: 767px) {
+			order: 5;
+		}
+	}
+
+	&__title {
+		color: $pink;
+		padding-bottom: 12px;
+	}
+
+	&_text {
+		
+	}
 }
