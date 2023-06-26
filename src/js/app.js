@@ -41,7 +41,7 @@ flsScroll.headerScroll();
 //===================//
 
 /* Работа с полями формы */
-flsForms.formFieldsInit({ viewPass: false });
+//flsForms.formFieldsInit({ viewPass: false });
 /* Oтправка формы */
 // flsForms.formSubmit();
 //===================//
