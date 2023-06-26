@@ -133,6 +133,33 @@
 	}
 }
 
+// breadcrumb ====================================================================================================//
+
+.breadcrumb__list {
+	position: relative;
+	z-index: 3;
+	font-size: 14px;
+	letter-spacing: 0.048px;
+	text-transform: uppercase;
+	display: flex;
+	li a {
+		margin-right: 30px;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			color: $green;
+			text-decoration: underline;
+		}
+		position: relative;
+		&::after{
+			content: "/";
+			position: absolute;
+			top: 4px;
+			right: -16px;
+			color: #fff;
+		}
+	}
+}
+
 //  ====================================================================================================//
 /*
 position: relative;
