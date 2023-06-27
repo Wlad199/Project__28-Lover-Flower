@@ -1259,10 +1259,13 @@ body._lock .main-screen__button {
 .page{
 	background-color: #000;
 	//padding: 200px 0px;
-	padding-bottom: 500px;
+	//padding-bottom: 500px;
 }
 .breadcrumb{
 	padding-top: 130px;
+	@media (max-width: 500px) {
+		padding-top: 90px;
+	}
 }
 
 // catalog-main ====================================================================================================//
@@ -1310,7 +1313,9 @@ body._lock .main-screen__button {
 			padding: 20px 10px 30px 10px;
 			backdrop-filter: blur(10px);
 			border-radius: 20px;
-			
+		}
+		@media (max-width: 767px) {
+			z-index: 2;
 		}
 	}
 
@@ -1359,6 +1364,8 @@ body._lock .main-screen__button {
 }
 
 .tegs-catalog {
+	position: relative;
+	z-index: 50;
 
 	&__list {
 		display: flex;
@@ -1367,6 +1374,7 @@ body._lock .main-screen__button {
 		@media (max-width: 500px) {
 			//display: block;
 			//display: inline-block;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -1407,6 +1415,7 @@ body._lock .main-screen__button {
 //  ====================================================================================================//
 .catalog-content {
 
+	@include adaptiveValue("padding-bottom", 180, 80);
 	&__sort {
 		margin: 40px 0px 0px auto;
 	}
@@ -1443,7 +1452,7 @@ body._lock .main-screen__button {
 		display: block;
 		position: relative;
 		z-index: 1;
-		padding-bottom: 10px;
+		//padding-bottom: 10px;
 	
 		label{
 			user-select: none;
@@ -1462,13 +1471,16 @@ body._lock .main-screen__button {
 	}
 }
 
-//  ====================================================================================================//
+// catalog-content ====================================================================================================//
 
 .catalog-content {
 
 	&__box {
-		display: flex;
-		gap: 30px;
+		@media (min-width: 500px) {
+			display: flex;
+			gap: 30px;
+		}
+
 		position: relative;
 		@media (max-width: 767px) {
 			gap: 20px;
@@ -1505,6 +1517,9 @@ body._lock .main-screen__button {
 		border-radius: 20px;
 		background: rgba(0, 0, 0, 0.30);
 		backdrop-filter: blur(10px);
+		@media (max-width: 500px) {
+			font-size: 18px;
+		}
 	}
 
 	&__goods {
@@ -1560,6 +1575,19 @@ body._lock .main-screen__button {
 		align-items: center;
 		width: 100%;
 		transition: none;
+	}
+
+	&__sort {
+		display: none;
+		@media (max-width: 500px) {
+			display: block;
+			padding-bottom: 10px;
+			position: relative;
+			z-index: 1;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
 	}
 }
 
@@ -1697,6 +1725,9 @@ input[type=range]::-webkit-slider-thumb {
 // goods-catalog ====================================================================================================//
 
 .goods-catalog {
+	@media (max-width: 500px) {
+		margin-top: 40px;
+	}
 
 	&__body {
 		position: relative;
@@ -1720,6 +1751,9 @@ input[type=range]::-webkit-slider-thumb {
 		@media (max-width: 600px) {
 			flex: 0 1 100%;
 		}
+		@media (max-width: 500px) {
+			padding-bottom: 35px;
+		}
 	}
 }
 
@@ -1731,6 +1765,12 @@ input[type=range]::-webkit-slider-thumb {
 	&__image {
 		img{
 			max-width: 100%;
+		}
+		@media (max-width: 500px) {
+			text-align: center;
+			img {
+				width: 100%;
+			}
 		}
 		padding-bottom: 10px;
 	}

@@ -81,7 +81,10 @@ body._lock {
 			background-color: #000;
 			z-index: 2;
 		}
+		&._active{
+		}
 	}
+
 
 	// Выезд меню-бургера при нажатии на бургер
 	.menu__body._active {
@@ -212,6 +215,7 @@ body._lock {
 	}
 
 	&__form {
+		padding-top: 5px;
 		display: flex;
 		align-items: center;
 		gap: 5px;
@@ -233,6 +237,10 @@ body._lock {
 				//outline: red;
 				outline: 1px solid $green;
 				border-radius: 5px;
+				&::placeholder{
+					color: rgba(#fff, 0.5);
+					letter-spacing: 0.5px;
+				}
 			}
 		}
 		button {
