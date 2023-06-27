@@ -141,6 +141,21 @@
 							<span class="text_l">в ящике</span>
 						</label>
 					</div>
+					<div class="left-side__params left-side__price">
+						<div class="filter-box">
+							<div class="title-filter left-side__title menu-sub-title">стоимость</div>
+							<div class="range-slider">
+								<input type="range" name="price_min" id="input-left" min="50000" max="400000" value="50000" />
+								<input type="range" name="price_max" id="input-right" min="50000" max="400000" value="400000" />
+								<div class="slider">
+									<div class="track"></div>
+									<div class="range"></div>
+									<div class="thumb left"><div class="price_value_min"></div></div>
+									<div class="thumb right"><div class="price_value_max"></div></div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div class="left-side__params left-side__params_flower">
 						<div class="left-side__title menu-sub-title">по формату</div>
 						<div class="flower-box">
@@ -223,7 +238,37 @@
 					</div>
 					<button type="reset" class="button-transparent left-side__button">Сбросить фильтр</button>
 				</form>
-				<div class="catalog-content__goods"></div>
+				<div class="catalog-content__goods goods-catalog">
+					<div class="goods-catalog__body">
+						<div class="goods-catalog__item item-goods-catalog item-goods-catalog_1">
+							<div class="item-goods-catalog__image">
+								<img src="@img/goods-catalog/01.jpg" alt="image">
+							</div>
+							<div class="item-goods-catalog__title text_t">лучший день</div>
+							<div class="item-goods-catalog__price">167.000 ₽</div>
+							<a href="#" class="item-goods-catalog__button button-transparent">В корзину</a>
+							<div class="item-goods-catalog__decor_new">NEW</div>
+						</div>
+						<div class="goods-catalog__item item-goods-catalog item-goods-catalog_1">
+							<div class="item-goods-catalog__image">
+								<img src="@img/goods-catalog/01.jpg" alt="image">
+							</div>
+							<div class="item-goods-catalog__title text_t">лучший день</div>
+							<div class="item-goods-catalog__price">167.000 ₽</div>
+							<a href="#" class="item-goods-catalog__button button-transparent">В корзину</a>
+							<div class="item-goods-catalog__decor_new">NEW</div>
+						</div>
+						<div class="goods-catalog__item item-goods-catalog item-goods-catalog_1">
+							<div class="item-goods-catalog__image">
+								<img src="@img/goods-catalog/01.jpg" alt="image">
+							</div>
+							<div class="item-goods-catalog__title text_t">лучший день</div>
+							<div class="item-goods-catalog__price">167.000 ₽</div>
+							<a href="#" class="item-goods-catalog__button button-transparent">В корзину</a>
+							<div class="item-goods-catalog__decor_new">NEW</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
