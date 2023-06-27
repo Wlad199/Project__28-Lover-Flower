@@ -1759,7 +1759,30 @@ input[type=range]::-webkit-slider-thumb {
 
 .item-goods-catalog {
 
-	&_1 {
+	&_2, &_6 {
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			background: url('@img/goods-catalog/icon/icon-new.svg') 100% 0 no-repeat;
+			top: 0;
+			right: 0;
+			width: 60px;
+			height: 60px;
+		}
+	}
+
+	&_3, &_4, &_8, &_11 {
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			background: url('@img/goods-catalog/icon/icon-sale.svg') 100% 0 no-repeat;
+			top: 0;
+			right: 0;
+			width: 60px;
+			height: 60px;
+		}
 	}
 
 	&__image {
@@ -1800,4 +1823,5 @@ input[type=range]::-webkit-slider-thumb {
 		&_new {
 		}
 	}
+
 }
