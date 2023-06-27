@@ -37,7 +37,7 @@ flsScroll.headerScroll();
 //===================//
 
 /* Модуль работы со спойлерами Документация:Сниппет (HTML): spollers */
-// flsFunctions.spollers();
+flsFunctions.spollers();
 //===================//
 
 /* Работа с полями формы */
