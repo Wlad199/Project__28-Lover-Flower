@@ -46,6 +46,17 @@
 	color: $pink;
 }
 
+// sub-title-sexty ====================================================================================================//
+
+.sub-title-sexty {
+	@include adaptiveValue("font-size", 60, 30);
+	font-family: Cormorant;
+	line-height: 106.666667%; /* 64/60 */
+	letter-spacing: 1.2px;
+	text-transform: uppercase;
+	color: $green;
+}
+
 // * ====================================================================================================//
 // * ====================================================================================================//
 
@@ -85,6 +96,12 @@
 		@include adaptiveValue("font-size", 20, 16);
 		letter-spacing: 0.08px;
 		text-transform: uppercase;
+	}
+	&_tup {
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 300;
+		line-height: 130%; /* 26/20 */
+		letter-spacing: 0.8px;
 	}
 }
 
