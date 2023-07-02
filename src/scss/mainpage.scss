@@ -1003,45 +1003,10 @@ body._lock .main-screen__button {
 
 	&__input {
 		width: 100%;
-		margin-bottom: 10px;
-		height: 60px;
-		padding: 20px;
-		outline: 1px solid $green;
-		background: transparent;
-		letter-spacing: 0.56px;
-		text-transform: uppercase;
-		color: #fff;
-		text-transform: none;
-		font-size: 16px;
-		letter-spacing: 0.1em;
-		&::placeholder{
-			color: #395959;
-		}
-		&:focus{
-			outline: 1px solid #fff;
-		}
 	}
 
 	&__text-area {
 		width: 100%;
-		padding: 20px;
-		outline: 1px solid $green;
-		background: transparent;
-		letter-spacing: 0.56px;
-		text-transform: uppercase;
-		color: #fff;
-		resize: none;
-		height: 120px;
-		margin-bottom: 20px;
-		text-transform: none;
-		font-size: 16px;
-		letter-spacing: 0.1em;
-		&::placeholder{
-			color: #395959;
-		}
-		&:focus{
-			outline: 1px solid #fff;
-		}
 	}
 
 	&__button {
@@ -1052,14 +1017,6 @@ body._lock .main-screen__button {
 	}
 
 	&__confed {
-		max-width: 340px;
-		font-size: 10px;
-		font-family: $roboto;
-		letter-spacing: 0.2px;
-		line-height: 130%;
-		a {
-			color: $pink;
-		}
 	}
 
 	&__decor {
@@ -2420,5 +2377,317 @@ input[type=range]::-webkit-slider-thumb {
 	&__text {
 		text-transform: uppercase;
 		font-weight: 300;
+	}
+}
+
+//  ====================================================================================================//
+// *! ====================================================================================================//
+// *! ====================================================================================================//
+
+// contact ====================================================================================================//
+
+.contacts-main {
+	@include adaptiveValue("padding-top", 50, 30);
+	@include adaptiveValue("padding-bottom", 140, 40);
+	position: relative;
+	&::after{
+		content: '';
+		position: absolute;
+		top: -24%;
+		right: 0%;
+		width: 350px;
+		height: 480px;
+		background: #922D2D;
+		filter: blur(125px);
+		transform: rotate(32.83deg);
+		@media (max-width: 500px) {
+			width: 300px;
+			height: 300px;
+			right: -21%;
+		}
+	}
+	@media (min-width: 767px) {
+		&::before{
+			content: '';
+			position: absolute;
+			top: -20%;
+			left: -13%;
+			width: 350px;
+			height: 480px;
+			background: #922D2D;
+			filter: blur(125px);
+			transform: rotate(32.83deg);
+		}
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+		@media (min-width: 500px) {
+			&::before{
+				content: '';
+				position: absolute;
+				top: 80%;
+				left: 0%;
+				width: 1000px;
+				height: 124px;
+				background: #922D2D;
+				filter: blur(125px);
+				transform: rotate(-165.83deg);
+			}
+		}
+	}
+
+	&__title {
+		@include adaptiveValue("padding-left", 100, 0);
+		@include adaptiveValue("padding-bottom", 50, 30);
+	}
+
+	&__cards {
+		display: flex;
+		gap: 30px;
+		@media (max-width: 992px) {
+			flex-wrap: wrap;
+		}
+		@media (max-width: 500px) {
+			display: block;
+		}
+	}
+
+	&__decor{
+		position: absolute;
+		top: -29%;
+		right: 0%;
+		z-index: 1;
+		@media (max-width: 500px) {
+			display: none;
+		}
+		&_l{
+			display: none;
+			@media (max-width: 500px) {
+				display: block;
+				position: absolute;
+				z-index: 1;
+				top: -21%;
+				right: 0%;
+			}
+		}
+	}
+}
+
+.cards-contacts {
+
+
+	&__item {
+		flex: 0 1 calc(25% - 22.5px);
+		border-radius: 20px;
+		background: rgba(0, 0, 0, 0.20);
+		backdrop-filter: blur(10px);
+		padding: 40px 30px;
+		text-align: center;
+		@media (max-width: 992px) {
+			flex: 0 1 calc(50% - 15px);
+		}
+		@media (max-width: 500px) {
+			background-color: transparent;
+			text-align-last: left;
+			padding: 0px 0px 20px 0px;
+			backdrop-filter: none;
+		}
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 700;
+		letter-spacing: 0.8px;
+		text-transform: uppercase;
+		color: $green;
+		@include adaptiveValue("padding-bottom", 30, 5);
+	}
+
+	&__text {
+	}
+}
+
+// call-us ====================================================================================================//
+
+.call-us {
+	position: relative;
+	&::before{
+		content: '';
+		position: absolute;
+		top: 0%;
+		left: -8%;
+		width: 300px;
+		height: 300px;
+		background: #922D2D;
+		filter: blur(125px);
+		transform: rotate(32.83deg);
+	}
+
+	&__container {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__body {
+		display: flex;
+		gap: 30px;
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__welcome {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+		}
+	}
+
+	&__message {
+		flex: 0 1 50%;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+		}
+	}
+
+	&__decor{
+		position: absolute;
+		top: -117%;
+		left: 0%;
+		z-index: 1;
+		@media (max-width: 767px) {
+			display: none;
+		}
+
+	}
+}
+
+.welcome-call-us {
+
+	&__title {
+		@media (min-width: 767px) {
+			p:last-child{
+				text-align: right;
+			}
+		}
+		@media (max-width: 767px) {
+			max-width: 500px;
+		}
+	}
+
+	&__sign {
+		max-width: 300px;
+		margin: 0px 40px 0px auto;
+		@media (max-width: 767px) {
+			margin-top: -40px;
+		}
+		@media (max-width: 500px) {
+			margin-top: 0;
+			img {
+				max-width: 70%;
+			}
+		}
+	}
+}
+
+.message-call-us {
+
+	&__text {
+		margin-left: auto;
+		@include adaptiveValue("margin-top", 90, 20, 1108, 767, 1);
+		max-width: 255px;
+		padding-bottom: 30px;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			top: -40px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: $green;
+			@media (max-width: 992px) {
+				top: -20px;
+			}
+			@media (max-width: 350px) {
+				width: 80%;
+			}
+		}
+		@media (max-width: 767px) {
+			margin-left: 0;
+		}
+		@media (max-width: 350px) {
+			max-width: none;
+		}
+	}
+
+	&__form {
+	}
+
+	&__input {
+		width: 100%;
+	}
+
+	&__text-area {
+		width: 100%;
+	}
+
+	&__button {
+		margin-bottom: 10px;
+		@media (max-width: 350px) {
+			width: 100%;
+		}
+	}
+
+	&__confed {
+	}
+}
+
+.map-contact {
+	@include adaptiveValue("padding-top", 100, 60);
+	@include adaptiveValue("padding-bottom", 150, 40);
+
+	&__map {
+		@include adaptiveValue("height", 430, 300);
+		iframe {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			z-index: 1;
+		}
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			bottom: -17%;
+			left: -9%;
+			width: 500px;
+			height: 300px;
+			background: #922D2D;
+			filter: blur(125px);
+			transform: rotate(32.83deg);
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			bottom: -17%;
+			right: -9%;
+			width: 500px;
+			height: 300px;
+			background: #922D2D;
+			filter: blur(125px);
+			transform: rotate(32.83deg);
+		}
+	}
+
+	&__title {
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 700;
+		letter-spacing: 0.8px;
+		text-transform: uppercase;
+		color: $green;
+		padding-bottom: 20px;
 	}
 }

@@ -211,6 +211,93 @@
 	}
 }
 
+// * ====================================================================================================//
+// * ====================================================================================================//
+// main-form ====================================================================================================//
+
+.main-form {
+
+	&__input{
+		margin-bottom: 10px;
+		height: 60px;
+		padding: 20px;
+		outline: 1px solid $green;
+		background: transparent;
+		letter-spacing: 0.56px;
+		text-transform: uppercase;
+		color: #fff;
+		text-transform: none;
+		font-size: 16px;
+		letter-spacing: 0.1em;
+		&::placeholder{
+			color: #395959;
+		}
+		&:focus{
+			outline: 1px solid #fff;
+		}
+	}
+
+	&__text-area{
+		padding: 20px;
+		outline: 1px solid $green;
+		background: transparent;
+		letter-spacing: 0.56px;
+		text-transform: uppercase;
+		color: #fff;
+		resize: none;
+		height: 120px;
+		margin-bottom: 20px;
+		text-transform: none;
+		font-size: 16px;
+		letter-spacing: 0.1em;
+		&::placeholder{
+			color: #395959;
+		}
+		&:focus{
+			outline: 1px solid #fff;
+		}
+	}
+
+	&__button {
+	}
+}
+
+.confed {
+	max-width: 340px;
+	font-size: 10px;
+	font-family: $roboto;
+	letter-spacing: 0.2px;
+	line-height: 130%;
+	a {
+		color: $pink;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  ====================================================================================================//
 /*
 position: relative;
