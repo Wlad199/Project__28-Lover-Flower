@@ -2691,3 +2691,126 @@ input[type=range]::-webkit-slider-thumb {
 		padding-bottom: 20px;
 	}
 }
+
+//  ====================================================================================================//
+// *! ====================================================================================================//
+// *! ====================================================================================================//
+
+// faq ====================================================================================================//
+
+.faq {
+	@include adaptiveValue("padding-top", 50, 30);
+	@include adaptiveValue("padding-bottom", 200, 50);
+
+	&__container {
+	}
+
+	&__title {
+		@include adaptiveValue("padding-left", 100, 40);
+		@include adaptiveValue("margin-bottom", 50, 30);
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			@include adaptiveValue("width", 65, 30);
+			height: 1px;
+			background-color: $green;
+		}
+	}
+
+	&__body {
+	}
+}
+
+.body-faq {
+
+	&__element {
+		border: 1px solid $green;
+		margin-bottom: 10px;
+		padding: 20px 20px 30px 20px;
+	}
+
+	&__head {
+		display: flex;
+		gap: 30px;
+		justify-content: space-between;
+		user-select: none;
+		align-items: center;
+		@include adaptiveValue("font-size", 20, 16);
+		cursor: pointer;
+		text-transform: uppercase;
+		line-height: 130%;
+		color: $green;
+	}
+
+	&__sub-title {
+		//padding-bottom: 20px;
+		//position: relative;
+		//&::after {
+		//	content: '+';
+		//	position: relative;
+		//	top: 0;
+		//	right: 0px;
+		//}
+	}
+
+	&__simbol {
+		padding-right: 30px;
+		padding-top: 10px;
+		span:first-child{
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 2px;
+				height: 20px;
+				background-color: $green;
+				transform: translate(9px, -9px)
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 20px;
+				height: 2px;
+				background-color: $green;
+			}
+		}
+		span:last-child{
+			position: relative;
+			&::before{
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 20px;
+				height: 2px;
+				background-color: $green;
+			}
+			display: none;
+		}
+	}
+
+	&__text {
+		@include adaptiveValue("font-size", 20, 16);
+		font-weight: 300;
+		line-height: 150%;
+		padding-top: 20px;
+	}
+
+
+}
+
+.body-faq__head._spoller-active .body-faq__simbol{
+	span:first-child{
+		display: none;
+	}
+	span:last-child{
+		display: block;
+	}
+}
