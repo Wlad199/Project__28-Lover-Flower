@@ -167,7 +167,7 @@ body._lock {
 		@include adaptiveValue("font-size", 14, 12, 1108, 767, 2);
 		li{
 			&:not(:last-child){
-				@include adaptiveValue("padding-right", 50, 20, 1108, 767, 1);
+				@include adaptiveValue("padding-right", 45, 15, 1108, 767, 1);
 			}
 			&:nth-child(7){
 				padding: 0;
