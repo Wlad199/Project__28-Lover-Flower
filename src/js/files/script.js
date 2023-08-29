@@ -57,3 +57,27 @@ $("#input-left").bind("input", setLeftValue);
 $("#input-right").bind("input", setRightValue);
 
 //////////////////////////////////////////////////////////////////////////////////
+
+// Hashtags ====================================================================================================//
+
+const catalogTags = document.querySelectorAll('.tegs-catalog__item')
+
+catalogTags.forEach(el => {
+	el.addEventListener('click', function () {
+		el.classList.toggle('_active')
+	})
+});
+
+// sort goods ====================================================================================================//
+
+const sortGoods = document.querySelectorAll('[data-sort-goods]')
+
+sortGoods.forEach(el => {
+	el.addEventListener('click', function () {
+		sortGoods.forEach(el => {
+			el.classList.remove('_active')
+		});
+		this.classList.add('_active')
+	})
+});
+
