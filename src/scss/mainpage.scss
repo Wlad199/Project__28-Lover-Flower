@@ -1384,6 +1384,20 @@ body._lock .main-screen__button {
 		margin: 40px 0px 0px auto;
 	}
 }
+
+.select_select-form{
+	display: none;
+	@media (min-width: 500px) {
+		display: block;
+		font-size: 18px;
+		font-weight: 300;
+		margin: 20px 0px 30px auto;
+		backdrop-filter: blur(10px);
+		width: 260px;
+		height: 40px;
+	}
+}
+
 .select-list {
 	@media (max-width: 500px) {
 		display: none;
@@ -1516,6 +1530,12 @@ body._lock .main-screen__button {
 		width: 0px;
 		height: 0px;
 	}
+	&__check {
+		position: relative;
+		display: inline-block;
+		width: 0px;
+		height: 0px;
+	}
 
 	&__check-style {
 		position: absolute;
@@ -1570,7 +1590,18 @@ body._lock .main-screen__button {
 	}
 }
 
-.left-side__check-box._active + .left-side__check-style::before{
+.left-side__check-box:checked + .left-side__check-style::before{
+	content: '';
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	width: 12px;
+	height: 12px;
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.left-side__check._active + .left-side__check-style::before{
 	content: '';
 	position: absolute;
 	top: -1px;

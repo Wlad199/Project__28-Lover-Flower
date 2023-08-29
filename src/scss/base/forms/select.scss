@@ -1,20 +1,41 @@
 // <SELECT>
 // Снипет (HTML): sel
 .select {
+	width: 260px;
 	position: relative;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.40);
+	//border-radius: 10px;
+	//backdrop-filter: blur(1000px);
+	background-repeat: 10px;
 	// .select__body
 	&__body {
 		position: relative;
 	}
-	// .select__title
+	// .select__titl
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		//border: 1px solid #d9d9d9;
+		//background-color: transparent;
 		cursor: pointer;
 		width: 100%;
 		border-radius: 4px;
+		position: relative;
+		&::after{
+			content: '';
+			transition: all 0.3s ease 0s;
+			position: absolute;
+			top: 13px;
+			right: 20px;
+			width: 0;
+			height: 0;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 10px solid #fff;
+			background-color: transparent;
+			transform: rotate(180deg);
+		}
 	}
 	// .select__value
 	&__value {
@@ -56,17 +77,20 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
+		color: #fff;
+		text-transform: uppercase;
 		position: absolute;
-		top: 29px;
+		top: 40px;	//!!!
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
 		border-top: 0;
-		border: 1px solid #d9d9d9;
+		//border: 1px solid #d9d9d9;
 		border-top: 0;
 		padding: 10px 0px 5px 0px;
+		letter-spacing: 0.48px;
+		background: rgba(0, 0, 0, 0.40);
+		backdrop-filter: blur(1000px);
 	}
 	// .select__scroll
 	&__scroll {
@@ -94,7 +118,7 @@
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				background: rgba(0, 0, 0, 0.60);
 			}
 		}
 	}
@@ -111,7 +135,7 @@
 
 	// Состояния селекта
 	&._select-open {
-		z-index: 5;
+		z-index: 2;
 	}
 	&._select-disabled {
 	}
@@ -128,4 +152,8 @@
 // Тег
 ._select-tag {
 	cursor: pointer;
+}
+
+.select._select-open .select__title::after{
+	transform: rotate(0);
 }
