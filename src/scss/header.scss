@@ -219,15 +219,19 @@ body._lock {
 		display: flex;
 		align-items: center;
 		gap: 5px;
+		input[type="text"]{
+			font-size: 16px;
+			letter-spacing: 1.5px;
+			font-weight: 200;
+		}
 		input{
 			text-align: left;
 			background-color: transparent;
 			//padding: 4px;
-			padding: 1px 5px 5px 5px;
+			padding: 4px 5px 5px 5px;
 			height: 22px;
 			width: 80px;
 			color: #fff;
-			font-size: 12px;
 			&::placeholder {
 				color: #fff;
 				font-size: 18px;
@@ -277,6 +281,15 @@ body._lock {
 
 	&__icon {
 	}
+}
+
+.form-head{
+	margin-top: -5px;
+}
+.form-find{
+	//padding-top: 1px;
+	position: relative;
+	top: 3px;
 }
 
 .menu-link {
